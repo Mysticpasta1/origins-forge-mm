@@ -1,0 +1,10 @@
+{
+    "type": "origins:fire_immunity",
+    "condition": {
+        "type": "origins:on_block",
+        "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:magma_block"
+        }
+    }
+}
