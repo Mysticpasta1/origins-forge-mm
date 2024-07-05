@@ -1,4 +1,8 @@
 {
+  "gui_title": {
+    "choose_origin": "Choose your stuff!",
+    "view_origin": "This is the stuff that you chose."
+  },
   "origins": [
     "test:badges",
     "test:callback"
