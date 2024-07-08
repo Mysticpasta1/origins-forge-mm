@@ -12,6 +12,7 @@
 * Renamed `IAbilityHolder` to `AbilityHolder`: Following the interface naming convention used by Neo and Mojang.
 * Removed `ApoliRegistries.codec()`: Fully replaced by Registry.byNameCodec.
 * `AbilityHolder.get` returns a nullable instance of `AbilityHolder`: Inline with the new capability system.
+* 
 
 ## Apoli
 
@@ -28,3 +29,5 @@
 * Default actions and conditions need to be data-generated. If you're a developer reading this, **don't change them**,
   you'll break quite literally everything.
 * `ActionFactory`, `ConditionFactory` and `PowerFactory` codecs have changed, pick the ones you need.
+* A lot of uses of `Codec` has been changed to `MapCodec` to fit with 1.21 changes to `Codec#dispatch`. 
+  Generally this will affect the `Factory` classes.

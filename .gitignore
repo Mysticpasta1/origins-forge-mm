@@ -24,6 +24,5 @@ bin/
 .classpath
 .project
 
-# fabric
-
 run/
+runs/

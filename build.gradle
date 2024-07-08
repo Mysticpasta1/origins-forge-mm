@@ -2,4 +2,53 @@ plugins {
     id 'java-library'
     id 'eclipse'
     id 'idea'
+    id 'net.neoforged.moddev' version '[0.1,0.2)'
+}
+
+repositories {
+    maven {
+        name 'Caelus'
+        url 'https://maven.theillusivec4.top/'
+    }
+    maven {
+        name = "QuiltMC"
+        url = "https://maven.quiltmc.org/repository/release"
+    }
+}
+
+neoForge {
+    version = neo_version
+    parchment {
+        minecraftVersion = minecraft_version
+        mappingsVersion = parchment_version
+    }
+    addModdingDependenciesTo(sourceSets["test"])
+
+    runs {
+        client {
+            client()
+            gameDirectory = file("runs/client")
+            sourceSet = sourceSets.test
+            jvmArguments = [ "-Dmixin.debug.verbose=true", "-Dmixin.debug.export=true" ]
+        }
+        server {
+            server()
+            gameDirectory = file("runs/server")
+            programArgument("--nogui")
+            sourceSet = sourceSets.test
+            jvmArguments = [ "-Dmixin.debug.verbose=true", "-Dmixin.debug.export=true" ]
+        }
+    }
+
+    mods {
+        register("calio") {
+            dependency(project(":calio"))
+        }
+        register("apoli") {
+            dependency(project(":apoli"))
+        }
+        register("origins") {
+            dependency(project(":origins"))
+        }
+    }
 }
