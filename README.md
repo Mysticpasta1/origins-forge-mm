@@ -11,12 +11,12 @@ Then run `gradlew build` in the root directory. The build output is the `unified
 ## Creating addons
 
 ### 1.7.1.1 and above
-Origins Forge now uses the MerchantPug maven to host its artifacts. To use this, add the following to your gradle build script:
+Origins Forge now uses the Greenhouse Team maven to host its artifacts. To use this, add the following to your gradle build script:
 ```gradle
 repositories {
     ...
     maven {
-        url "https://maven.merchantpug.net"
+        url "https://repo.greenhouse.house"
     }
 }
 
